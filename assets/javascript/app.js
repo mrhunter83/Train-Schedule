@@ -1,4 +1,4 @@
-      var config = {
+        var config = {
         apiKey: "AIzaSyA99J7anEeqTQ9PH7NRne0VrLxc5svcM0g",
         authDomain: "employee-data-management-a8e38.firebaseapp.com",
         databaseURL: "https://employee-data-management-a8e38.firebaseio.com",
@@ -6,7 +6,7 @@
         storageBucket: "employee-data-management-a8e38.appspot.com",
         messagingSenderId: "1022555536333"
       };
-      firebase.initializeApp(config)
+      firebase.initializeApp(config);
 
       var database = firebase.database();
 
@@ -16,8 +16,6 @@
       var minutesAway = 0;
       var convertTime = "";
       var convertFormat = "HH:mm A"
-      // var monthsWorked = 0;
-      // var totalBill = 0;
       var count = 0;
 
       $("#submit").on('click', function() {
@@ -27,10 +25,8 @@
         firstTrainTime = $("#timeInput").val().trim();
         trainFrequency = $("#freqInput").val().trim();
         convertTime = moment(firstTrainTime, convertFormat);
-        minutesAway = moment(convertTime).diff(moment(), 'minutes');
-        // monthsWorked = moment().diff(moment(convertTime), 'months');
-        // monthRate = $("#rate-input").val().trim();
-        // totalBill = monthsWorked * monthRate;
+        minutesAway = moment().diff(moment(convertTime), 'minutes')
+        
 
         database.ref().push({
           name: trainName,
